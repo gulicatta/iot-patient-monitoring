@@ -1,0 +1,9 @@
+{
+  "skin_temperature": {
+    "warning_threshold": 23.0,
+    "alarm_threshold": 28.0
+  },
+  "pill_timer": {
+    "interval_seconds": 30
+  }
+}

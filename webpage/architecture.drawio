@@ -1,0 +1,165 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- HARDWARE                                            -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="10" value="SensorTag (CC2650)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#434343;fontColor=#ffffff;strokeColor=#434343;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="450" y="40" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="11" value="Sensors: temp · humidity · acceleration&#xa;Buttons: b1 · b2    Alarm flag" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#555555;" vertex="1" parent="1">
+      <mxGeometry x="380" y="106" width="340" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- UART arrow -->
+    <mxCell id="20" value="UART (JSON lines)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="10" target="30">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- UART CONNECTOR                                      -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="30" value="uart_connector.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="420" y="180" width="260" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="31" value="Reads serial port (or mock mode)&#xa;POST each JSON packet to /api/ingest" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#555555;" vertex="1" parent="1">
+      <mxGeometry x="340" y="234" width="420" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- POST /api/ingest arrow -->
+    <mxCell id="40" value="POST /api/ingest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;strokeColor=#0066CC;" edge="1" parent="1" source="30" target="50">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- DOCKER CONTAINER                                    -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="45" value="Docker Container  (port 5000)" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;dashed=1;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="130" y="310" width="840" height="240" as="geometry" />
+    </mxCell>
+
+    <!-- api.py -->
+    <mxCell id="50" value="api.py&#xa;Flask :5000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="45">
+      <mxGeometry x="60" y="80" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="51" value="GET /api/health    GET /api/config&#xa;GET /api/patients    GET /api/patients/&lt;id&gt;&#xa;GET /api/patients/&lt;id&gt;/history&#xa;GET /api/patients/&lt;id&gt;/pill&#xa;POST /api/patients/&lt;id&gt;/pill/confirm&#xa;Serves built React frontend" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="45">
+      <mxGeometry x="60" y="148" width="200" height="80" as="geometry" />
+    </mxCell>
+
+    <!-- api.py → uart_reader.py arrow -->
+    <mxCell id="52" value="ingest / query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="45" source="50" target="60">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- uart_reader.py -->
+    <mxCell id="60" value="uart_reader.py&#xa;In-Memory Store" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="45">
+      <mxGeometry x="460" y="80" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="61" value="Per patient (did):&#xa;  latest reading  |  history (ring 50)&#xa;  pill_confirmed_at&#xa;Thread-safe (Lock)" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="45">
+      <mxGeometry x="460" y="148" width="200" height="70" as="geometry" />
+    </mxCell>
+
+    <!-- config.json -->
+    <mxCell id="70" value="config.json" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;size=14;" vertex="1" parent="45">
+      <mxGeometry x="700" y="80" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="71" value="skin_temperature:&#xa;  warning_threshold&#xa;  alarm_threshold&#xa;pill_timer:&#xa;  interval_seconds" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="45">
+      <mxGeometry x="700" y="148" width="120" height="76" as="geometry" />
+    </mxCell>
+
+    <!-- config → api.py arrow -->
+    <mxCell id="72" value="reads on startup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;dashed=1;" edge="1" parent="45" source="70" target="50">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- GET polling arrow (Docker → Browser) -->
+    <mxCell id="80" value="GET /api/patients    GET /api/patients/&lt;id&gt;&#xa;GET /api/patients/&lt;id&gt;/pill    GET /api/config&#xa;(polling every 2 s)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;strokeColor=#009900;" edge="1" parent="1" source="45" target="90">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- BROWSER / FRONTEND                                  -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <mxCell id="90" value="Browser  (React 19 + MUI 7)" style="swimlane;startSize=30;fillColor=#f0fff0;strokeColor=#009900;fontColor=#006600;dashed=1;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="130" y="640" width="840" height="240" as="geometry" />
+    </mxCell>
+
+    <!-- App.jsx -->
+    <mxCell id="91" value="App.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="90">
+      <mxGeometry x="60" y="70" width="160" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="92" value="State: patients · selectedDid&#xa;patientDetail · pillStatuses · config&#xa;Polling interval: 2 000 ms" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="90">
+      <mxGeometry x="60" y="126" width="160" height="54" as="geometry" />
+    </mxCell>
+
+    <!-- api.js -->
+    <mxCell id="93" value="api.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="90">
+      <mxGeometry x="60" y="186" width="160" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="94" value="" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=9;" edge="1" parent="90" source="91" target="93">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- PatientOverview -->
+    <mxCell id="100" value="PatientOverview" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="90">
+      <mxGeometry x="290" y="70" width="160" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="101" value="Table of all patients&#xa;ID · Last Seen · Temp (color)&#xa;Humidity · Alarm · Connection&#xa;Pill status chip" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="90">
+      <mxGeometry x="290" y="126" width="160" height="62" as="geometry" />
+    </mxCell>
+
+    <!-- PatientDetail -->
+    <mxCell id="110" value="PatientDetail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" vertex="1" parent="90">
+      <mxGeometry x="530" y="70" width="150" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="111" value="Expandable panel&#xa;Vital Signs · State (Alarm)&#xa;Pill Schedule" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#444444;" vertex="1" parent="90">
+      <mxGeometry x="530" y="126" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- VitalCard -->
+    <mxCell id="120" value="VitalCard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="90">
+      <mxGeometry x="530" y="186" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="121" value="Temp (color-coded)&#xa;Humidity" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#444444;" vertex="1" parent="90">
+      <mxGeometry x="530" y="194" width="110" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- PillTimer -->
+    <mxCell id="130" value="PillTimer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="90">
+      <mxGeometry x="660" y="186" width="110" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="131" value="Overdue / Due In / Next In&#xa;Mark as taken button" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#444444;" vertex="1" parent="90">
+      <mxGeometry x="656" y="194" width="118" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- App → PatientOverview -->
+    <mxCell id="140" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" parent="90" source="91" target="100">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- App → PatientDetail -->
+    <mxCell id="141" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" parent="90" source="91" target="110">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- PatientDetail → VitalCard -->
+    <mxCell id="142" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" parent="90" source="110" target="120">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- PatientDetail → PillTimer -->
+    <mxCell id="143" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;" edge="1" parent="90" source="110" target="130">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- POST pill/confirm arrow (Browser → Docker, going up on right side) -->
+    <mxCell id="150" value="POST /api/patients/&lt;id&gt;/pill/confirm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;strokeColor=#FF6600;exitPerimeter=0;" edge="1" parent="1" source="90" target="45">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1030" y="760" />
+          <mxPoint x="1030" y="430" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+    <storageModule moduleId="org.eclipse.cdt.core.settings">
+        <cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.776401597">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.776401597" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+                <externalSettings/>
+                <extensions>
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="com.ti.ccs.project.ErrorParser"/>
+                    <extension id="org.eclipse.rtsc.xdctools.parsers.ErrorParser" point="com.ti.ccs.project.ErrorParser"/>
+                    <extension id="com.ti.ccs.errorparser.CompilerErrorParser_TI" point="com.ti.ccs.project.ErrorParser"/>
+                </extensions>
+            </storageModule>
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                <configuration artifactExtension="lib" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.776401597" name="Debug" parent="com.ti.ccstudio.buildDefinitions.TMS470.Debug">
+                    <folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.776401597." name="/" resourcePath="">
+                        <toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.libraryDebugToolchain.1786204682" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.libraryDebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianDebug.177980121">
+                            <option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1448498538" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+                                <listOptionValue value="DEVICE_CONFIGURATION_ID=Cortex M.CC1350F128"/>
+                                <listOptionValue value="DEVICE_CORE_ID="/>
+                                <listOptionValue value="DEVICE_ENDIANNESS=little"/>
+                                <listOptionValue value="OUTPUT_FORMAT=ELF"/>
+                                <listOptionValue value="CCS_MBS_VERSION=70.0.0"/>
+                                <listOptionValue value="RTSC_MBS_VERSION=7.0.0"/>
+                                <listOptionValue value="XDC_VERSION=3.51.3.28_core"/>
+                                <listOptionValue value="OUTPUT_TYPE=rtscConfiguration:staticLibrary"/>
+                                <listOptionValue value="PRODUCTS=com.ti.SIMPLELINK_CC13X0_SDK:4.20.2.07;"/>
+                                <listOptionValue value="PRODUCT_MACRO_IMPORTS={&quot;com.ti.SIMPLELINK_CC13X0_SDK&quot;:[&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_LIBRARIES}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_SYMBOLS}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_SYSCONFIG_MANIFEST}&quot;]}"/>
+                            </option>
+                            <option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.922806929" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="18.12.5.LTS" valueType="string"/>
+                            <targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.targetPlatformDebug.1238149894" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.targetPlatformDebug"/>
+                            <builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.builderDebug.1324860808" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.builderDebug"/>
+                            <tool id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.compilerDebug.1344761373" name="Arm Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.compilerDebug">
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEBUGGING_MODEL.57823480" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DISPLAY_ERROR_NUMBER.1613401139" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WARNING.1672098392" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WARNING" valueType="stringList">
+                                    <listOptionValue value="225"/>
+                                </option>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP.580543446" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN.678008302" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN" value="true" valueType="boolean"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.INCLUDE_PATH.1217180796" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.INCLUDE_PATH" valueType="includePath">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_INCLUDE_PATH}"/>
+                                </option>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEFINE.986938975" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEFINE" valueType="definedSymbols">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_SYMBOLS}"/>
+                                </option>
+                            </tool>
+                            <tool id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianDebug.177980121" name="Arm Archiver" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianDebug">
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.archiverID.OUTPUT_FILE.353718414" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.archiverID.OUTPUT_FILE" value="${ProjName}.lib" valueType="string"/>
+                            </tool>
+                            <tool id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.591678373" name="XDCtools" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool">
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR.1270056211" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR" value="${CG_TOOL_ROOT}" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET.843571513" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET" value="ti.targets.arm.elf.M3" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM.763186701" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM" value="ti.platforms.simplelink:CC1350F128" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW.430175765" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW" value="ti.platforms.simplelink:CC1350F128" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE.1829259982" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE" value="release" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH.522324607" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH" valueType="stringList">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_INSTALL_DIR_REPOS}"/>
+                                </option>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.COMPILE_OPTIONS.1034726244" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.COMPILE_OPTIONS" value=" -DDeviceFamily_CC13X0 " valueType="string"/>
+                            </tool>
+                        </toolChain>
+                    </folderInfo>
+                    <sourceEntries>
+                        <entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/sysbios"/>
+                    </sourceEntries>
+                </configuration>
+            </storageModule>
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+        </cconfiguration>
+        <cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Release.497607276">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Release.497607276" moduleId="org.eclipse.cdt.core.settings" name="Release">
+                <externalSettings/>
+                <extensions>
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="com.ti.ccs.project.ErrorParser"/>
+                    <extension id="org.eclipse.rtsc.xdctools.parsers.ErrorParser" point="com.ti.ccs.project.ErrorParser"/>
+                    <extension id="com.ti.ccs.errorparser.CompilerErrorParser_TI" point="com.ti.ccs.project.ErrorParser"/>
+                </extensions>
+            </storageModule>
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                <configuration artifactExtension="lib" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.TMS470.Release.497607276" name="Release" parent="com.ti.ccstudio.buildDefinitions.TMS470.Release">
+                    <folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Release.497607276." name="/" resourcePath="">
+                        <toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.ReleaseToolchain.2104215866" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianRelease.214805845">
+                            <option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1382305054" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+                                <listOptionValue value="DEVICE_CONFIGURATION_ID=Cortex M.CC1350F128"/>
+                                <listOptionValue value="DEVICE_CORE_ID="/>
+                                <listOptionValue value="DEVICE_ENDIANNESS=little"/>
+                                <listOptionValue value="OUTPUT_FORMAT=ELF"/>
+                                <listOptionValue value="CCS_MBS_VERSION=70.0.0"/>
+                                <listOptionValue value="RTSC_MBS_VERSION=7.0.0"/>
+                                <listOptionValue value="XDC_VERSION=3.51.3.28_core"/>
+                                <listOptionValue value="OUTPUT_TYPE=rtscConfiguration:staticLibrary"/>
+                                <listOptionValue value="PRODUCTS=com.ti.SIMPLELINK_CC13X0_SDK:4.20.2.07;"/>
+                                <listOptionValue value="PRODUCT_MACRO_IMPORTS={&quot;com.ti.SIMPLELINK_CC13X0_SDK&quot;:[&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_INCLUDE_PATH}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_LIBRARY_PATH}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_LIBRARIES}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_SYMBOLS}&quot;,&quot;${COM_TI_SIMPLELINK_CC13X0_SDK_SYSCONFIG_MANIFEST}&quot;]}"/>
+                            </option>
+                            <option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.644035934" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="18.12.5.LTS" valueType="string"/>
+                            <targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.targetPlatformRelease.772412117" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.targetPlatformRelease"/>
+                            <builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.builderRelease.99546552" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.builderRelease"/>
+                            <tool id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.compilerRelease.2091475211" name="Arm Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.compilerRelease">
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DISPLAY_ERROR_NUMBER.1662949182" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WARNING.1798344036" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WARNING" valueType="stringList">
+                                    <listOptionValue value="225"/>
+                                </option>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP.2085068058" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.OPT_LEVEL.library.release.1441573590" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.OPT_LEVEL.library.release" value="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.OPT_LEVEL._none" valueType="enumerated"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN.1176660944" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.LITTLE_ENDIAN" value="true" valueType="boolean"/>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.INCLUDE_PATH.1797142583" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.INCLUDE_PATH" valueType="includePath">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_INCLUDE_PATH}"/>
+                                </option>
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEFINE.1916720775" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.compilerID.DEFINE" valueType="definedSymbols">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_SYMBOLS}"/>
+                                </option>
+                            </tool>
+                            <tool id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianRelease.214805845" name="Arm Archiver" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.library.librarianRelease">
+                                <option id="com.ti.ccstudio.buildDefinitions.TMS470_18.12.archiverID.OUTPUT_FILE.229424791" superClass="com.ti.ccstudio.buildDefinitions.TMS470_18.12.archiverID.OUTPUT_FILE" value="${ProjName}.lib" valueType="string"/>
+                            </tool>
+                            <tool id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.822855511" name="XDCtools" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool">
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR.312378142" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.CODEGEN_TOOL_DIR" value="${CG_TOOL_ROOT}" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET.986234842" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.TARGET" value="ti.targets.arm.elf.M3" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM.639891571" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM" value="ti.platforms.simplelink:CC1350F128" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW.2029394058" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.PLATFORM_RAW" value="ti.platforms.simplelink:CC1350F128" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE.646613023" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.BUILD_PROFILE" value="release" valueType="string"/>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH.772415483" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.XDC_PATH" valueType="stringList">
+                                    <listOptionValue value="${COM_TI_SIMPLELINK_CC13X0_SDK_INSTALL_DIR_REPOS}"/>
+                                </option>
+                                <option id="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.COMPILE_OPTIONS.1223176564" superClass="com.ti.rtsc.buildDefinitions.XDC_3.16.tool.COMPILE_OPTIONS" value=" -DDeviceFamily_CC13X0 " valueType="string"/>
+                            </tool>
+                        </toolChain>
+                    </folderInfo>
+                    <sourceEntries>
+                        <entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/sysbios"/>
+                    </sourceEntries>
+                </configuration>
+            </storageModule>
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+        </cconfiguration>
+    </storageModule>
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        <project id="tirtos_builds_CC1350_LAUNCHXL_release_ccs.com.ti.ccstudio.buildDefinitions.TMS470.ProjectType.109960350" name="TMS470" projectType="com.ti.ccstudio.buildDefinitions.TMS470.ProjectType"/>
+    </storageModule>
+</cproject>

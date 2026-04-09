@@ -1,0 +1,250 @@
+---
+Language: Cpp
+# BasedOnStyle:  Microsoft
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments:
+  Enabled:               true
+  AcrossEmptyLines:      false
+  AcrossComments:        true
+  AlignCompound:         true
+  AlignFunctionPointers: true
+  PadOperators:          true
+AlignConsecutiveBitFields:
+  Enabled:               true
+  AcrossEmptyLines:      true
+  AcrossComments:        true
+AlignConsecutiveDeclarations:
+  Enabled:               false
+  AcrossEmptyLines:      false
+  AcrossComments:        false
+AlignConsecutiveMacros:
+  Enabled:               true
+  AcrossEmptyLines:      true
+  AcrossComments:        true
+AlignConsecutiveShortCaseStatements:
+  Enabled:          true
+  AcrossEmptyLines: false
+  AcrossComments:   true
+# TODO: Enable this when clang-format 19 releases
+#  AlignCaseArrows:  true
+  AlignCaseColons:  false
+# TODO: Replace with "LeftWithLastLine" when clang-format 19 releases
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AlignTrailingComments:
+  Kind:            Always
+  OverEmptyLines:  0
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowBreakBeforeNoexceptSpecifier: Never
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: MultiLine
+# NOTE: We currently aren't using AttributeMacros, this needs to be adjusted if we start using them.
+# AttributeMacros:
+#   - __capability
+BinPackArguments: false
+BinPackParameters: false
+BitFieldColonSpacing: Both
+BraceWrapping:
+  AfterCaseLabel:        true
+  AfterClass:            true
+  AfterControlStatement: Always
+  AfterEnum:             true
+  AfterExternBlock:      true
+  AfterFunction:         true
+  AfterNamespace:        true
+  AfterObjCDeclaration:  true
+  AfterStruct:           true
+  AfterUnion:            true
+  BeforeCatch:           true
+  BeforeElse:            true
+  BeforeLambdaBody:      false
+  BeforeWhile:           false
+  IndentBraces:          false
+  SplitEmptyFunction:    true
+  SplitEmptyRecord:      true
+  SplitEmptyNamespace:   true
+BreakAdjacentStringLiterals: true
+BreakAfterAttributes: Leave
+# TODO: Enable this when clang-format 19 releases
+# BreakAfterReturnType: Automatic
+BreakArrays: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Custom
+BreakBeforeConceptDeclarations: Always
+BreakBeforeInlineASMColon: OnlyMultiline
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+# TODO: Enable this when clang-format 19 releases
+# BreakFunctionDefinitionParameters: false
+BreakInheritanceList: BeforeColon
+BreakStringLiterals: true
+# TODO: Enable this when clang-format 19 releases
+# BreakTemplateDeclarations: MultiLine
+ColumnLimit: 120
+# NOTE: There is no need to configure this currently. Adjust this if necessary.
+# CommentPragmas: '^ IWYU pragma:'
+CompactNamespaces: false
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+DisableFormat:   false
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: LogicalBlock
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
+# NOTE: We currently aren't using ForEachMacros, this needs to be adjusted if we start using them.
+# ForEachMacros:
+#   - foreach
+#   - Q_FOREACH
+#   - BOOST_FOREACH
+# NOTE: We currently aren't using IfMacros, this needs to be adjusted if we start using them.
+# IfMacros:
+#   - KJ_IF_MAYBE
+IncludeBlocks:   Preserve
+IncludeCategories:
+  - Regex:           '(.+/)*stdafx\.h("|>)'
+    Priority:        1
+  - Regex:           '(.+/)*include_all\.h("|>)'
+    Priority:        2
+  - Regex:           '(.+/)*include_lib\.h("|>)'
+    Priority:        3
+  - Regex:           '(.+/)*TargetConfig\.h("|>)'
+    Priority:        4
+  - Regex:           '".*"'
+    Priority:        5
+  - Regex:           '<.*>'
+    Priority:        6
+IncludeIsMainRegex: '(_test)?$'
+IncludeIsMainSourceRegex: ''
+IndentAccessModifiers: false
+IndentCaseBlocks: false
+IndentCaseLabels: true
+IndentExternBlock: AfterExternBlock
+IndentGotoLabels: true
+IndentPPDirectives: BeforeHash
+IndentRequiresClause: true
+IndentWidth: 4
+IndentWrappedFunctionNames: true
+InsertBraces: false
+InsertNewlineAtEOF: true
+InsertTrailingCommas: Wrapped
+IntegerLiteralSeparator:
+  Binary:           0
+  BinaryMinDigits:  0
+  Decimal:          0
+  DecimalMinDigits: 0
+  Hex:              0
+  HexMinDigits:     0
+# TODO: Enable this when clang-format 19 releases
+# KeepEmptyLines:
+#   AtEndOfFile:    false
+#   AtStartOfBlock: false
+#   AtStartOfFile:  false
+KeepEmptyLinesAtEOF: false
+KeepEmptyLinesAtTheStartOfBlocks: false
+LambdaBodyIndentation: Signature
+LineEnding: DeriveLF
+MacroBlockBegin: ''
+MacroBlockEnd: ''
+# Macros:
+#   - A(x)=x
+# TODO: Enable this when clang-format 19 releases
+# MainIncludeChar: Quote
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+# NamespaceMacros:
+#   - TESTSUITE
+PPIndentWidth: -1
+PackConstructorInitializers: NextLineOnly
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakOpenParenthesis: 0
+PenaltyBreakScopeResolution: 500
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyIndentedWhitespace: 0
+PenaltyReturnTypeOnItsOwnLine: 1000
+PointerAlignment: Left
+QualifierAlignment: Leave
+# QualifierOrder:
+#   - const
+#   - inline
+#   - static
+#   - friend
+#   - constexpr
+#   - volatile
+#   - restrict
+#   - type
+ReferenceAlignment: Pointer
+ReflowComments: true
+RemoveBracesLLVM: false
+RemoveParentheses: Leave
+RemoveSemicolon: false
+RequiresClausePosition: OwnLine
+RequiresExpressionIndentation: OuterScope
+SeparateDefinitionBlocks: Always
+ShortNamespaceLines: 1
+SkipMacroDefinitionBody: false
+SortIncludes: Never
+SortUsingDeclarations: LexicographicNumeric
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceAroundPointerQualifiers: Default
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeParensOptions:
+  AfterControlStatements:       true
+  AfterForeachMacros:           true
+  AfterFunctionDeclarationName: false
+  AfterFunctionDefinitionName:  false
+  AfterIfMacros:                true
+  AfterOverloadedOperator:      false
+  AfterPlacementOperator:       true
+  AfterRequiresInClause:        false
+  AfterRequiresInExpression:    false
+  BeforeNonEmptyParentheses:    false
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: Never
+SpacesInContainerLiterals: true
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+SpacesInParens: Never
+SpacesInSquareBrackets: false
+Standard: Auto
+# StatementAttributeLikeMacros:
+#   - Q_EMIT
+# StatementMacros:
+#   - Q_UNUSED
+#   - QT_REQUIRE_VERSION
+TabWidth: 4
+UseTab: Always
+VerilogBreakBetweenInstancePorts: true
+WhitespaceSensitiveMacros:
+  - DeviceFamily_constructPath
+...

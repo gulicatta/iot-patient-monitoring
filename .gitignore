@@ -1,0 +1,23 @@
+*.cache
+*.obj
+*.out
+*.map
+*.d
+*.aem3
+*.prefs
+.ccsproject
+debug/
+*linkinfo.xml
+compile_commands.json
+.clangd
+makefile.libs
+**/sysbios/makefile
+src/makefile.libs
+<<<<<<< HEAD
+webpage/.claude
+webpage/.vscode
+webpage/_pycache__
+=======
+**/targetConfigs/*
+**/.theia/*
+>>>>>>> 98ceed1e6fc28f62005da38ed2eebef7e160a8b1

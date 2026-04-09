@@ -1,0 +1,43 @@
+# top-most EditorConfig file
+root = true
+
+# Properties affecting all files (they can be overriden later)
+[*]
+indent_style = tab
+indent_size = tab
+# NOTE: Line endings can be handled by the OS,
+#       the VCS is responsible for keeping them consistent in repositories.
+# end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 120
+
+# Makefiles require tab indentation
+[[Mm][Aa][Kk][Ee][Ff][Ii][Ll][Ee]]
+indent_style = tab
+
+# There are lots of variations for template_makefile currently
+[[Tt][Ee][Mm][Pp][Ll][Aa][Tt][Ee]_[Mm][Aa][Kk][Ee][Ff][Ii][Ll][Ee]]
+indent_style = tab
+
+[[Mm][Aa][Kk][Ee][Ff][Ii][Ll][Ee]_[Tt][Ee][Mm][Pp][Ll][Aa][Tt][Ee]]
+indent_style = tab
+
+[*.mk]
+indent_style = tab
+
+[*.{ld,s,S,asm,ASM}]
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_size = 4
+
+[*.md]
+indent_size = 4
+trim_trailing_whitespace = false
+
+# Auto generated version.txt
+[**/version.txt]
+insert_final_newline = false
