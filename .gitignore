@@ -14,7 +14,6 @@ makefile.libs
 **/sysbios/makefile
 src/makefile.libs
 <<<<<<< HEAD
-webpage/.claude
 webpage/.vscode
 webpage/_pycache__
 =======
